@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resource/css/style.css" type="text/css">
+    <title>ABOUT US</title>
+</head>
+<body>
+
+<header>
+    <img src="resource/image/header.jpg" float:center;">
+</header>
+
+<nav class="topnav">
+<a href="index.html" class="logo">
+    <img src="resource/image/logo.jpg" alt="Logo Image">
+</a>
+<ul>
+    <li><a href="home.html">HOME</a></li>
+    <li><a class="active" href="aboutus.html">ABOUT US</a></li>
+    <div class="dropdown">
+        <li><a href="#" class="dropbtn">PRODUCTS</a></li>
+        <div class="dropdown-content">
+            <li><a href="product2.html" onclick="alert('Keychains selected!')">KEYCHAINS</a></li>
+            <li><a href="product4.html" onclick="alert('Accessories selected!')">ACCESSORIES</a></li>
+            <li><a href="product3.html" onclick="alert('Plushies selected!')">PLUSHIES</a></li>
+            <li><a href="product6.html" onclick="alert('Balloons selected!')">BALLOONS</a></li>
+            <li><a href="product8.html" onclick="alert('Bouquets selected!')">BOUQUETS</a></li>
+            <li><a href="product7.html" onclick="alert('Cakes selected!')">CAKES</a></li>
+            <li><a href="product1.html" onclick="alert('Totebags selected!')">TOTEBAGS</a></li>
+            <li><a href="product5.html" onclick="alert('Bottles selected!')">BOTTLES</a></li>
+        </div>
+    </div>
+    <li><a href="review.html">REVIEWS</a></li>
+    <li><a href="survey.html">CUSTOMER SURVEY</a></li>
+    <li><a href="contact.html">CONTACT</a></li>
+    <li><a href="wishlist.html">WISHLIST</a></li>
+</ul>
+</nav>
+
+
+<div class="title">ABOUT US</div>
+<main>
+    <div class="profile-container">
+        <div class="profile">
+            <img src="resource/image/mira.jpg" alt="Nur Amirah">
+            <div class="profile-info">
+                <p><strong>Title:</strong> Corporate Website</p>
+                <p><strong>Name:</strong> Nur Amirah Binti Abdul Halim</p>
+                <p><strong>Student ID:</strong> 2022869138</p>
+                <p><strong>Group:</strong> KCDIM1444F</p>
+                <p><strong>Course code:</strong> IML154</p>
+                <p><strong>Course name:</strong> Introduction to Web Content Development</p>
+                <p><strong>Faculty:</strong> College of Computing, Informatics and Mathematics</p>
+                <p><strong>Submission date:</strong> 25/6/2024</p>
+            </div>
+        </div>
+
+        <div class="profile">
+            <img src="resource/image/mai.jpg" alt="Nur Maisarah">
+            <div class="profile-info">
+                <p><strong>Title:</strong> Corporate Website</p>
+                <p><strong>Name:</strong> Nur Maisarah Binti Abdul Manah</p>
+                <p><strong>Student ID:</strong> 2022892948</p>
+                <p><strong>Group:</strong> KCDIM1444F</p>
+                <p><strong>Course code:</strong> IML254</p>
+                <p><strong>Course name:</strong> Introduction to Web Content Development</p>
+                <p><strong>Faculty:</strong> College of Computing, Informatics and Mathematics</p>
+                <p><strong>Submission date:</strong> 25/6/2024</p>
+            </div>
+        </div>
+
+        <div class="profile">
+            <img src="resource/image/anis.jpg" alt="Nurul Anis Adeela">
+            <div class="profile-info">
+                <p><strong>Title:</strong> Corporate Website</p>
+                <p><strong>Name:</strong> Nurul Anis Adeela Binti Rosele</p>
+                <p><strong>Student ID:</strong> 2022606634</p>
+                <p><strong>Group:</strong> KCDIM1444F</p>
+                <p><strong>Course code:</strong> IML254</p>
+                <p><strong>Course name:</strong> Introduction to Web Content Development</p>
+                <p><strong>Faculty:</strong> College of Computing, Informatics and Mathematics</p>
+                <p><strong>Submission date:</strong> 25/6/2024</p>
+            </div>
+        </div>
+
+        <div class="profile">
+            <img src="resource/image/ikha.jpg" alt="Wan Nurzulaikha">
+            <div class="profile-info">
+                <p><strong>Title:</strong> Corporate Website</p>
+                <p><strong>Name:</strong> Wan Nurzulaikha Binti Megat Zulkefli</p>
+                <p><strong>Student ID:</strong> 2022812158</p>
+                <p><strong>Group:</strong> KCDIM1444F</p>
+                <p><strong>Course code:</strong> IML254</p>
+                <p><strong>Course name:</strong> Introduction to Web Content Development</p>
+                <p><strong>Faculty:</strong> College of Computing, Informatics and Mathematics</p>
+                <p><strong>Submission date:</strong> 25/6/2024</p>
+            </div>
+        </div>
+    </div>
+</main>
+<div class="title">ORGANIZATION CHART</div>
+<br><br><br><br><br><br><br><br><br>
+    <div class="center">
+        <div class="bordered-img">
+            <img src="resource/image/org chart.jpg" style="width: 100%; height: 1000px;">
+        </div>
+    </div>
+<br><br><br><br><br><br><br><br><br>
+<footer>
+    <p>&copy; 2024 Harmony's Gift Gallery. All rights reserved.</p>
+    <p class="last-update">Last updated: June 25, 2024</p>
+        <button class="scroll-to-top" onclick="scrollToTop()"><img src="resource/icon/arrow.png" alt="Top arrow"></button>
+    </footer>
+
+    <script>
+        // Function to scroll to the top of the page
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show scroll-to-top button when scrolling down
+        window.onscroll = function() {
+            var scrollButton = document.querySelector('.scroll-to-top');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollButton.style.display = "block";
+            } else {
+                scrollButton.style.display = "none";
+            }
+        };
+    </script>
+
+</body>
+</html>

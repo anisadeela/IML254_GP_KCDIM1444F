@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resource/css/style.css" type="text/css">
+    <style>
+        header img {
+            max-width: 100%;
+            height: auto;
+            float: center;
+        }
+    </style>
+    <title>Wishlist</title>
+</head>
+<body>
+<header>
+    <img src="resource/image/header.jpg">
+</header>
+
+<nav class="topnav">
+<a href="index.html" class="logo">
+    <img src="resource/image/logo.jpg" alt="Logo Image">
+</a>
+    <ul>
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="aboutus.html">ABOUT US</a></li>
+        <div class="dropdown">
+            <li><a href="#" class="dropbtn">PRODUCTS</a></li>
+            <div class="dropdown-content">
+                <li><a href="product2.html" onclick="alert('Keychains selected!')">KEYCHAINS</a></li>
+                <li><a href="product4.html" onclick="alert('Accessories selected!')">ACCESSORIES</a></li>
+                <li><a href="product3.html" onclick="alert('Plushies selected!')">PLUSHIES</a></li>
+                <li><a href="product6.html" onclick="alert('Balloons selected!')">BALLOONS</a></li>
+                <li><a href="product8.html" onclick="alert('Bouquets selected!')">BOUQUETS</a></li>
+                <li><a href="product7.html" onclick="alert('Cakes selected!')">CAKES</a></li>
+                <li><a href="product1.html" onclick="alert('Totebags selected!')">TOTEBAGS</a></li>
+                <li><a href="product5.html" onclick="alert('Bottles selected!')">BOTTLES</a></li>
+            </div>
+        </div>
+        <li><a href="review.html">REVIEWS</a></li>
+        <li><a href="survey.html">CUSTOMER SURVEY</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a class="active" href="wishlist.html">WISHLIST</a></li>
+    </ul>
+</nav>
+
+<div class="title">WISHLIST</div>
+
+<main>
+    <div class="wishlist-container" id="wishlist-container">
+        <!-- Wishlist items will be injected here by JavaScript -->
+    </div>
+    <p class="empty-message" id="empty-message">Your wishlist is empty.</p>
+</main>
+
+<footer>
+    <p>&copy; 2024 Your Website. All rights reserved.</p>
+    <p class="last-update">Last updated: June 25, 2024</p>
+        <button class="scroll-to-top" onclick="scrollToTop()"><img src="resource/icon/arrow.png" alt="Top arrow"></button>
+    </footer>
+
+    <script>
+        // Function to scroll to the top of the page
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show scroll-to-top button when scrolling down
+        window.onscroll = function() {
+            var scrollButton = document.querySelector('.scroll-to-top');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollButton.style.display = "block";
+            } else {
+                scrollButton.style.display = "none";
+            }
+        };
+    </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const wishlistContainer = document.getElementById('wishlist-container');
+        const emptyMessage = document.getElementById('empty-message');
+
+        let wishlist = localStorage.getItem('wishlist');
+        if (wishlist) {
+            wishlist = JSON.parse(wishlist);
+            wishlist.forEach(item => {
+                const wishlistItem = document.createElement('div');
+                wishlistItem.classList.add('wishlist-item');
+
+                wishlistItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="wishlist-info">
+                        <h2>${item.name}</h2>
+                        <p>Price: RM${item.price}</p>
+                        <button class="btn-remove" onclick="removeFromWishlist('${item.name}')">Remove</button>
+                    </div>
+                `;
+                wishlistContainer.appendChild(wishlistItem);
+            });
+
+            checkEmptyWishlist();
+        } else {
+            checkEmptyWishlist();
+        }
+    });
+
+    function removeFromWishlist(productName) {
+        let wishlist = localStorage.getItem('wishlist');
+        if (wishlist) {
+            wishlist = JSON.parse(wishlist);
+            wishlist = wishlist.filter(item => item.name !== productName);
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+
+            document.location.reload();
+        }
+    }
+
+    function checkEmptyWishlist() {
+        const wishlistContainer = document.getElementById('wishlist-container');
+        const emptyMessage = document.getElementById('empty-message');
+        if (wishlistContainer.children.length === 0) {
+            emptyMessage.style.display = 'block';
+        } else {
+            emptyMessage.style.display = 'none';
+        }
+    }
+</script>
+</body>
+</html>
+

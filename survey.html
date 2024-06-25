@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resource/css/style.css" type="text/css">
+    <title>SURVEY</title>
+</head>
+<body>
+
+<header>
+    <img src="resource/image/header.jpg"  float:center;">
+</header>
+
+
+<nav class="topnav">
+<a href="index.html" class="logo">
+    <img src="resource/image/logo.jpg" alt="Logo Image">
+</a>
+<ul>
+    <li><a href="home.html">HOME</a></li>
+    <li><a href="aboutus.html">ABOUT US</a></li>
+    <div class="dropdown">
+        <li><a href="#" class="dropbtn">PRODUCTS</a></li>
+        <div class="dropdown-content">
+            <li><a href="product2.html" onclick="alert('Keychains selected!')">KEYCHAINS</a></li>
+            <li><a href="product4.html" onclick="alert('Accessories selected!')">ACCESSORIES</a></li>
+            <li><a href="product3.html" onclick="alert('Plushies selected!')">PLUSHIES</a></li>
+            <li><a href="product6.html" onclick="alert('Balloons selected!')">BALLOONS</a></li>
+            <li><a href="product8.html" onclick="alert('Bouquets selected!')">BOUQUETS</a></li>
+            <li><a href="product7.html" onclick="alert('Cakes selected!')">CAKES</a></li>
+            <li><a href="product1.html" onclick="alert('Totebags selected!')">TOTEBAGS</a></li>
+            <li><a href="product5.html" onclick="alert('Bottles selected!')">BOTTLES</a></li>
+        </div>
+    </div>
+    <li><a href="review.html">REVIEWS</a></li>
+    <li><a class="active" href="survey.html">CUSTOMER SURVEY</a></li>
+    <li><a href="contact.html">CONTACT</a></li>
+    <li><a href="wishlist.html">WISHLIST</a></li>
+</ul>
+</nav>
+
+<div class="title">TELL US WHAT YOU THINK</div>
+
+<main>
+    <div class="survey-container">
+        <!-- Use mailto: protocol to open user's email client -->
+        <form action="mailto:adeelarosele@gmail.com" method="POST" enctype="text/plain">
+            <label for="fname">First Name</label><br>
+            <input type="text" id="fname" name="fname" required><br>
+
+            <label for="lname">Last Name</label><br>
+            <input type="text" id="lname" name="lname" required><br>
+
+            <label for="email">Email Address</label><br>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="feedback">Feedback</label><br>
+            <textarea id="feedback" name="feedback" rows="4" required></textarea><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+<br><br><br><br><br><br>
+</main>
+
+<footer>
+    <p>&copy; 2024 Harmony's Gift Gallery. All rights reserved.</p>
+    <p class="last-update">Last updated: June 25, 2024</p>
+        <button class="scroll-to-top" onclick="scrollToTop()"><img src="resource/icon/arrow.png" alt="Top arrow"></button>
+    </footer>
+
+    <script>
+        // Function to scroll to the top of the page
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show scroll-to-top button when scrolling down
+        window.onscroll = function() {
+            var scrollButton = document.querySelector('.scroll-to-top');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollButton.style.display = "block";
+            } else {
+                scrollButton.style.display = "none";
+            }
+        };
+    </script>
+
+</body>
+</html>
+
